@@ -44,19 +44,19 @@ int Bag::addTokens() const {
 int Bag::highValueTokens() const {
     // TODO: write a loop that enumerates the entire bag
     // and returns the number of high value Tokens
-    int sum {0};
+    int count {0};
     for (size_t i{0}; i < contents.size(); ++i) {
         if (contents[i].isHighValue()) {
-            sum += contents[i].getValue();
+            ++count;
         }
     }
-    return sum;
+    return count;
 }
 
 int Bag::firstGreen() const {
     // TODO: search bag for a green Token, if found, return its index
     for (size_t i{0}; i < contents.size(); ++i) {
-        if (contents[i].getColor() == std::string("Green)")) {
+        if (contents[i].getColor() == std::string("Green")) {
             return i;
         }
     }	
